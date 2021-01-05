@@ -139,3 +139,17 @@ def team_names()
     data = game_hash
     return [data[:home][:team_name], data[:away][:team_name]]
 end
+
+def player_numbers(team_name)
+    data = game_hash
+    if team_name == "Brooklyn Nets"
+        data[:home][:players].collect { |each_player|
+            each_player[:number]
+        }
+    end
+    if team_name == "Charlotte Hornets"
+        data[:away][:players].collect { |each_player|
+            each_player[:number]
+        }
+    end
+end
