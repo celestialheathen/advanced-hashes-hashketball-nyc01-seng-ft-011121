@@ -126,4 +126,11 @@ def game_hash
   }
 end
 
-# Write code here
+def team_colors(team_name)
+    case team_name
+    when "Brooklyn Nets"
+        return ["Black", "White"]
+    when "Charlotte Hornets"
+        return ["Turquoise", "Purple"]
+    end
+end
