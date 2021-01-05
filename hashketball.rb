@@ -134,3 +134,8 @@ def team_colors(team_name)
         return ["Turquoise", "Purple"]
     end
 end
+
+def team_names()
+    data = game_hash
+    return [data[:home][:team_name], data[:away][:team_name]
+end
