@@ -201,5 +201,22 @@ end
 
 def big_shoe_rebounds()
     data = game_hash()
-    return 11
+    largest_at_home = nil
+    largest_away = nil
+    rebounds_at_home = 0
+    rebounds_away = 0
+
+    data[:home][:players].each { |each_player|
+        if largest_at_home == nil || each_player[:shoe] > largest_at_home
+            largest_at_home = each_player[:shoe]
+            rebounds_at_home = each_player[:rebounds]
+        end
+    }
+    data[:away][:players].each { |each_player|
+        if largest_away == nil || each_player[:shoe] > largest_away
+            largest_away = each_player[:shoe]
+            rebounds_away = each_player[:rebounds]
+        end
+    }
+    rebounds_at_home > rebounds_away ? rebounds_at_home : rebounds_away
 end
