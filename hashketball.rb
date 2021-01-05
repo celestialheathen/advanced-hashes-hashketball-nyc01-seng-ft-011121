@@ -170,3 +170,17 @@ def player_stats(name)
         end
     }
 end
+
+def shoe_size(name)
+    data = game_hash
+    data[:home][:players].each { |each_player|
+        if each_player[:player_name] == name
+            return each_player[:shoe]
+        end
+    }
+    data[:away][:players].each { |each_player|
+        if each_player[:player_name] == name
+            return each_player[:shoe]
+        end
+    }
+end
