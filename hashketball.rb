@@ -142,14 +142,17 @@ end
 
 def player_numbers(team_name)
     data = game_hash
+    jersey = []
     if team_name == "Brooklyn Nets"
-        data[:home][:players].collect { |each_player|
-            each_player[:number]
+        data[:home][:players].each { |each_player|
+            jersey.push(each_player[:number])
         }
+        return jersey
     end
     if team_name == "Charlotte Hornets"
-        data[:away][:players].collect { |each_player|
-            each_player[:number]
+        data[:away][:players].each { |each_player|
+            jersey.push(each_player[:number])
         }
+        return jersey
     end
 end
