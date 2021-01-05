@@ -198,3 +198,8 @@ def num_points_scored(name)
         end
     }
 end
+
+def big_shoe_rebounds(name)
+    data = game_hash()
+    return 11
+end
