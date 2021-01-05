@@ -156,3 +156,17 @@ def player_numbers(team_name)
         return jersey
     end
 end
+
+def player_stats(name)
+    data = game_hash
+    data[:home][:players].each { |each_player|
+        if each_player[:player_name] == name
+            return each_player
+        end
+    }
+    data[:away][:players].each { |each_player|
+        if each_player[:player_name] == name
+            return each_player
+        end
+    }
+end
